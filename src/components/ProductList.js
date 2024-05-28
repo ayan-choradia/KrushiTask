@@ -22,6 +22,7 @@ function ProductList() {
   const cart = useSelector(state => state.cart.products);
   const wishlist = useSelector(state => state.wishlist.products);
   const [isCartOpen, setCartOpen] = useState(false);
+  const [isWishlistOpen, setWishlistOpen] = useState(false);
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
@@ -34,6 +35,12 @@ function ProductList() {
 
   const toggleCart = () => {
     setCartOpen(!isCartOpen);
+    setWishlistOpen(false);
+  };
+
+  const toggleWishlist = () => {
+    setWishlistOpen(!isWishlistOpen);
+    setCartOpen(false);
   };
 
   return (
@@ -41,7 +48,7 @@ function ProductList() {
       <nav className="navbar">
         <h1>My Store</h1>
         <div className="navbar-icons">
-          <FaHeart className="navbar-icon" onClick={toggleCart} />
+          <FaHeart className="navbar-icon" onClick={toggleWishlist} />
           <FaShoppingCart className="navbar-icon" onClick={toggleCart} />
         </div>
       </nav>
@@ -60,6 +67,8 @@ function ProductList() {
         ) : (
           <p>No items in cart</p>
         )}
+      </div>
+      <div className={`wishlist-panel ${isWishlistOpen ? 'open' : ''}`}>
         <h2>Wishlist</h2>
         {wishlist.length > 0 ? (
           wishlist.map((product) => (

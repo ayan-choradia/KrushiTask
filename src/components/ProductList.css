@@ -22,7 +22,7 @@ body {
     cursor: pointer;
 }
 
-.cart-panel {
+.cart-panel, .wishlist-panel {
     position: fixed;
     top: 0;
     left: -100%;
@@ -35,7 +35,7 @@ body {
     z-index: 1000;
 }
 
-.cart-panel.open {
+.cart-panel.open, .wishlist-panel.open {
     left: 0;
 }
 
@@ -156,7 +156,8 @@ h2 {
     }
 
     .product-list {
-        width: 100%;
+        width: 90%;
+        height: auto;
     }
 
     .product-card {

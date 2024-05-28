@@ -9,8 +9,7 @@ function App() {
     <div className="App">
       <h1>Shopping Cart</h1>
       <ProductList />
-      <Cart />
-      <Wishlist />
+      
     </div>
   );
 }
