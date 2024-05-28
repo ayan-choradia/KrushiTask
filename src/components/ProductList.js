@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart } from '../features/cartslice';
-import { addToWishlist, removeFromWishlist } from '../features/wishlistSlice';
-import { FaHeart } from 'react-icons/fa';  // Import the heart icon from react-icons
+import { addToCart } from '../features/carts';
+import { addToWishlist, removeFromWishlist } from '../features/wishlistS';
+import { FaHeart } from 'react-icons/fa';  
 
 import './ProductList.css';
 
@@ -15,7 +15,7 @@ const products = [
   { id: 6, name: 'Product 6', price: 60, image: '/images/product1.jpg' },
   { id: 7, name: 'Product 7', price: 70, image: '/images/product1.jpg' },
   { id: 8, name: 'Product 8', price: 80, image: '/images/product1.jpg' },
-  // Add more products as needed
+ 
 ];
 
 function ProductList() {
