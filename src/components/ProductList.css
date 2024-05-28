@@ -1,14 +1,54 @@
-.container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    background: #0B0A0F;
-    padding: 20px;
-}
-
 body {
     background-color: #222;
     color: #eee;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    color: #fff;
+}
+
+.navbar-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.cart-panel {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    background-color: #444;
+    padding: 20px;
+    overflow-y: auto;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.cart-panel.open {
+    left: 0;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
 }
 
 .product-list {
@@ -23,13 +63,18 @@ h2 {
     margin-bottom: 20px;
 }
 
+.product-list-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
 .product-card {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 10px;
     padding: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -63,13 +108,6 @@ h2 {
 
 .product-card:hover .product-details {
     opacity: 1;
-}
-
-.product-list-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    height: min-content;
 }
 
 .wishlist-button {
@@ -114,19 +152,19 @@ h2 {
 
 @media screen and (max-width: 600px) {
     .product-list-grid {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
     }
 
     .product-list {
-        width: 80%; 
+        width: 100%;
     }
 
     .product-card {
-        height: auto; 
-        width: 80%; 
+        height: auto;
+        width: 90%;
     }
 
     .product-image {
-        height: auto; 
+        height: auto;
     }
 }
