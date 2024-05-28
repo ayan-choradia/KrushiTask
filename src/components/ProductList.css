@@ -156,12 +156,12 @@ h2 {
     }
 
     .product-list {
-        width: 100%;
+        width: 90%;
     }
 
     .product-card {
         height: auto;
-        width: 90%;
+        width: 80%;
     }
 
     .product-image {
