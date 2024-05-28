@@ -1,0 +1,23 @@
+.wishlist {
+  padding: 20px;
+}
+
+.wishlist-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.remove-from-wishlist-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.remove-from-wishlist-button:hover {
+  background-color: #c82333;
+}

@@ -1,0 +1,135 @@
+/* Shared Styles */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust card size and allow responsive behavior */
+    gap: 20px;
+    background: #0B0A0F;
+    padding: 20px;
+}
+
+/* Night Effect */
+body {
+    background-color: #222; /* Dark background */
+    color: #eee; /* Light text color */
+}
+
+/* Product List Styles */
+.product-list {
+    display: flex; /* Center products horizontally */
+    flex-direction: column; /* Products stacked vertically */
+    align-items: center; /* Align products horizontally in the center */
+    margin: 0 auto; /* Center the list horizontally on the page */
+    width: 80%; /* Adjust width as needed */
+}
+
+h2 {
+    margin-bottom: 20px; /* Add some space below the heading */
+}
+
+/* Card Styles */
+.product-card {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    backdrop-filter: blur(10px);
+    border-radius: 10px; /* Rounded corners */
+    padding: 15px; /* Add some padding */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff; /* White text color for cards */
+    height: 400px; /* Adjust height as needed */
+    overflow: hidden; /* Needed for hover effects */
+    position: relative; /* Enable positioning for wishlist icon */
+}
+
+.product-image {
+    width: 100%;
+    height: 230px; /* Adjust image height */
+    border-radius: 10px; /* Match card border radius */
+    transition: filter 0.3s ease; /* Hover effect for blur */
+}
+
+.product-card:hover .product-image {
+    filter: blur(5px); /* Blur image on hover */
+}
+
+.product-details {
+    text-align: center; /* Center align text content */
+    position: absolute; /* Position at the bottom of the card */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent dark background */
+    transition: opacity 0.3s ease; /* Smooth fade-in on hover */
+}
+
+.product-card:hover .product-details {
+    opacity: 1; /* Show details on hover */
+}
+
+.product-list-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four products in a row */
+    gap: 20px;
+    height: min-content; /* Adjust height to fit content */
+}
+
+/* Wishlist Button */
+.wishlist-button {
+    display: none; /* Initially hidden */
+    color: #ff0000; /* Red color for un-wishlisted state */
+    transition: color 0.3s ease;
+    font-size: 3rem;
+    cursor: pointer;
+    position: absolute; /* Absolute positioning for overlay on image */
+    top: 50%; /* Center vertically within card */
+    left: 50%; /* Center horizontally within card */
+    transform: translate(-50%, -50%); /* Center the button */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border: none;
+    border-radius: 50%; /* Rounded button */
+    padding: 10px;
+    z-index: 1; /* Ensure it appears above the image */
+}
+
+.product-card:hover .wishlist-button {
+    display: block; /* Display button on image hover */
+}
+
+.wishlist-button.wishlisted {
+    color: #ff0000; /* Red color when wishlisted */
+}
+
+/* Add to Cart Button */
+.add-to-cart-button {
+    background-color: #4CAF50; /* Green button color */
+    color: #fff; /* White text color */
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: auto; /* Adjust margin as needed */
+}
+
+@media screen and (max-width: 600px) {
+    .product-list-grid {
+        grid-template-columns: 1fr; /* Single card vertically arranged */
+    }
+
+    .product-list {
+        width: 100%; /* Adjust width for mobile */
+    }
+
+    .product-card {
+        height: auto; /* Adjust height for mobile */
+        width: 90%; /* Adjust width for mobile */
+    }
+
+    .product-image {
+        height: auto; /* Adjust image height for mobile */
+    }
+}

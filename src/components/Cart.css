@@ -1,0 +1,28 @@
+.cart {
+    padding: 20px;
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+  }
+  
+  .cart-item input {
+    width: 50px;
+  }
+  
+  .remove-from-cart-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .remove-from-cart-button:hover {
+    background-color: #c82333;
+  }
+  
