@@ -2,6 +2,8 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../features/cartslice';
 import { addToWishlist, removeFromWishlist } from '../features/wishlistSlice';
+import { FaHeart } from 'react-icons/fa';  // Import the heart icon from react-icons
+
 import './ProductList.css';
 
 const products = [
@@ -25,7 +27,7 @@ function ProductList() {
   };
 
   const handleWishlistToggle = (product) => {
-    const isWishlisted = wishlist.find(item => item.id === product.id);
+    const isWishlisted = wishlist.some(item => item.id === product.id);
     dispatch(isWishlisted ? removeFromWishlist(product.id) : addToWishlist(product));
   };
 
@@ -41,10 +43,10 @@ function ProductList() {
               className="product-image"
             />
             <button
-              className={`wishlist-button ${wishlist.find(item => item.id === product.id) ? 'wishlisted' : ''}`}
+              className={`wishlist-button ${wishlist.some(item => item.id === product.id) ? 'wishlisted' : ''}`}
               onClick={() => handleWishlistToggle(product)}
             >
-              <i className="fas fa-heart"></i>
+              <FaHeart className="heart-icon" />  {/* Use FaHeart icon here */}
             </button>
             <div className="product-details">
               <h3>{product.name}</h3>
@@ -57,7 +59,7 @@ function ProductList() {
         ))}
       </div>
     </div>
-  );
+  );    
 }
 
 export default ProductList;
